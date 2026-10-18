@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Ömer Burhan Çınar</title>
+  <title>Ömer Burhan</title>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="description"
-    content="Ömer Burhan Çınar — aspiring mechanical engineer from Gaziantep, Türkiye. Rocketry, leadership, travel and writing.">
+    content="Ömer Burhan — aspiring mechanical engineer from Gaziantep, Turkey. Rocketry, leadership, travel and writing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
@@ -349,8 +349,10 @@
     .hero .eyebrow {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 18px;
-      margin-bottom: 22px
+      gap: 8px 22px;
+      margin-bottom: 22px;
+      font-size: clamp(.9rem, 1.6vw, 1.05rem);
+      color: var(--ink)
     }
 
     .hero .eyebrow span {
@@ -2054,7 +2056,7 @@
   <div class="page">
     <header class="nav">
       <div class="wrap">
-        <a class="mark" href="#top"><i>ÖBÇ</i><span>Ömer Burhan Çınar</span></a>
+        <a class="mark" href="#top"><i>ÖB</i><span>Ömer Burhan</span></a>
         <nav class="links" aria-label="Sections">
           <a href="#about">About</a>
           <a href="#engineering">Engineering</a>
@@ -2080,8 +2082,8 @@
         <div class="wrap">
           <div class="hero-grid">
             <div>
-              <div class="eyebrow label"><span>Future mechanical engineer</span><span>Gaziantep, Türkiye</span></div>
-              <h1><span class="l1">Ömer Burhan</span><span class="l2">Çınar<b>.</b></span></h1>
+              <div class="eyebrow label"><span>Future mechanical engineer</span><span>Gaziantep, Turkey</span></div>
+              <h1><span class="l1">Ömer</span><span class="l2">Burhan<b>.</b></span></h1>
               <p class="lede">I'm a senior at TOBB Science High School in Gaziantep. I <em>launch rockets</em>, lead
                 debate as a committee chair, write code in Python, Java and JavaScript, and travel to see how people built things
                 that are still standing two thousand years later.</p>
@@ -2104,7 +2106,7 @@
           <dl class="titleblock">
             <div>
               <dt>Name</dt>
-              <dd>Ömer Burhan Çınar</dd>
+              <dd>Ömer Burhan</dd>
             </div>
             <div>
               <dt>Age</dt>
@@ -2142,7 +2144,7 @@
             <p class="big">I think in <span>forces</span>, <span>systems</span> and <span>people</span>. Mechanical
               engineering is where all three meet.</p>
             <div>
-              <p>I grew up in Gaziantep, a city of workshops and factories in southeastern Türkiye, and I study at TOBB
+              <p>I grew up in Gaziantep, a city of workshops and factories in southeastern Turkey, and I study at TOBB
                 Science High School, a science-focused public school. Physics and mathematics are the core of my day.
                 Outside class I build and fly model rockets, write software, and spend a lot of time in Model United
                 Nations, where I went from representing China as a delegate to chairing the World Health Organization
@@ -2164,7 +2166,7 @@
             </div>
             <div class="trait">
               <h3>Explorer</h3>
-              <p>Belgium, the Netherlands and across Türkiye, with an eye for the engineering behind each place.</p>
+              <p>Belgium, the Netherlands and across Turkey, with an eye for the engineering behind each place.</p>
             </div>
           </div>
         </div>
@@ -2421,8 +2423,8 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
     <footer>
       <div class="wrap">
         <div>
-          <div class="sig">Ömer Burhan Çınar</div>
-          <p class="mono" style="margin-top:10px;color:var(--ink-soft)">TOBB Science High School · Gaziantep, Türkiye ·
+          <div class="sig">Ömer Burhan</div>
+          <p class="mono" style="margin-top:12px;color:var(--ink);font-size:clamp(.95rem, 1.8vw, 1.1rem)">TOBB Science High School · Gaziantep, Turkey ·
             Class of 2027</p>
         </div>
         <div class="contacts" id="contacts"></div>
@@ -2454,7 +2456,7 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
     // Contact links. Fill any you want to show; empty ones stay hidden.
     const CONTACT = {
       email: "burhanomercinar@gmail.com",
-      github: "https://github.com/Warriorlie123",
+      github: "https://github.com/omerburhanc",
       linkedin: "",   // e.g. "https://linkedin.com/in/..."
       instagram: ""
     };
@@ -2477,7 +2479,7 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
     // WHAT'S NEXT — upcoming projects and goals. Edit freely; status: "planned" | "in progress" | "done"
     // SOFTWARE PROJECTS — repo = folder name on GitHub; demo = page that runs in the browser (optional;
     // it lives at omerburhan.com/<repo>/ unless demoUrl gives another address)
-    const GITHUB_USER = "Warriorlie123";
+    const GITHUB_USER = "omerburhanc";
     const PROJECTS = [
       {
         repo: "uav-flight-sim", featured: true, title: "UAV Flight Simulator", kicker: "Physics simulation · control",
@@ -2524,7 +2526,7 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
       {
         id: "brussels", place: "Brussels", country: "Belgium", lat: 50.85, lon: 4.35,
         note: "The Atomium was built for Expo 58. It is a model of an iron crystal's unit cell, magnified 165 billion times: nine steel spheres held 102 metres up by tubes that also carry escalators. Nearby, the Cinquantenaire arch was completed in 1905 for the 75th anniversary of Belgian independence. And the city's smallest celebrity, the Manneken Pis statue, owns a wardrobe of more than 1,000 costumes.",
-        memory: "In the summer of 2026 I spent two weeks in Belgium. I stayed with family friends we hadn't seen in a long time. When they said they would be happy to host me, I got on a plane.\n\nIt was my first time abroad, and I was nervous. I was travelling alone, and it would be the first time I had to speak English with people from other countries. There is no direct flight from Gaziantep, so I flew to Istanbul, waited a few hours, and flew on to Brussels.\n\nSudden pressure changes always affect my hearing, and this landing was no exception. At passport control I could barely understand a word the officer said, and for a moment it felt as if years of studying English had been for nothing. Then my ears cleared, I answered his questions, and I was let in.\n\nThe father of the family picked me up at the airport. After a long catch-up we drove to their house, in a quiet neighbourhood away from the city centre. We spent about five days exploring Brussels: we ate the famous waffles and chocolate, visited museums and rode bikes. Cycling safely through a city was new to me; it is not something I am used to in Türkiye. It made me realise that feeling safe on a bike is mostly a design decision: it depends on how a street is laid out, not only on how careful the riders are.\n\nLooking at the city as a future engineer, the place that stayed with me was the Atomium. From a distance it looks like a sculpture, but it is a working building: nine steel spheres, each 18 metres across, joined by tubes that visitors walk and ride escalators through. It was built for the 1958 World's Fair and meant to stand for only six months. Almost fifty years later its original aluminium skin was replaced with stainless-steel panels so that it could keep standing. I liked that: a temporary structure that people decided was worth maintaining, and then engineered to last.\n\nA couple of times I talked with strangers, and each time I walked away feeling I had embarrassed myself. But it was my first time abroad, and the only way to get better at it was to keep trying.",
+        memory: "In the summer of 2026 I spent two weeks in Belgium. I stayed with family friends we hadn't seen in a long time. When they said they would be happy to host me, I got on a plane.\n\nIt was my first time abroad, and I was nervous. I was travelling alone, and it would be the first time I had to speak English with people from other countries. There is no direct flight from Gaziantep, so I flew to Istanbul, waited a few hours, and flew on to Brussels.\n\nSudden pressure changes always affect my hearing, and this landing was no exception. At passport control I could barely understand a word the officer said, and for a moment it felt as if years of studying English had been for nothing. Then my ears cleared, I answered his questions, and I was let in.\n\nThe father of the family picked me up at the airport. After a long catch-up we drove to their house, in a quiet neighbourhood away from the city centre. We spent about five days exploring Brussels: we ate the famous waffles and chocolate, visited museums and rode bikes. Cycling safely through a city was new to me; it is not something I am used to in Turkey. It made me realise that feeling safe on a bike is mostly a design decision: it depends on how a street is laid out, not only on how careful the riders are.\n\nLooking at the city as a future engineer, the place that stayed with me was the Atomium. From a distance it looks like a sculpture, but it is a working building: nine steel spheres, each 18 metres across, joined by tubes that visitors walk and ride escalators through. It was built for the 1958 World's Fair and meant to stand for only six months. Almost fifty years later its original aluminium skin was replaced with stainless-steel panels so that it could keep standing. I liked that: a temporary structure that people decided was worth maintaining, and then engineered to last.\n\nA couple of times I talked with strangers, and each time I walked away feeling I had embarrassed myself. But it was my first time abroad, and the only way to get better at it was to keep trying.",
         photos: [["bel-10", "The Atomium"], ["bel-04", "Cinquantenaire arch"], ["bel-14", "Quadriga on top of the Cinquantenaire arch"], ["bel-11", "The Everard 't Serclaes memorial near the Grand-Place, rubbed for good luck"], ["bel-05", "With Manneken Pis, Brussels' famous fountain statue"], ["bel-12", "Manneken Pis wearing one of his costumes"], ["bel-13", "Church interior"], ["bel-21", "Painting in a Brussels church"], ["bel-07", "A First World War tank in the military history museum"], ["bel-17", "Model of a ship of the line"], ["bel-18", "Polar expedition ship model"], ["bel-19", "Naval vessel model"], ["bel-15", " A First World War veteran dog 'Whisky' "], ["bel-16", "Museum exhibit"]]
       },
       {
@@ -2552,37 +2554,37 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
         photos: [["nl-01", "On a canal bridge in Amsterdam"], ["bel-25", "The Royal Palace on Dam Square"], ["bel-27", "Dam Square and the Royal Palace"], ["nl-02", "On the road through the Netherlands"]]
       },
       {
-        id: "izmir", city: "İzmir & Aydın", road: 1110, place: "İzmir & Kuşadası", country: "Türkiye", lat: 38.42, lon: 27.14,
+        id: "izmir", city: "İzmir & Aydın", road: 1110, place: "İzmir & Kuşadası", country: "Turkey", lat: 38.42, lon: 27.14,
         note: "İzmir's Konak Clock Tower dates from 1901. Down the coast in Kuşadası, Pigeon Island (Güvercinada) is joined to the mainland by a causeway and topped by an old fortress.",
         memory: "",
         photos: [["izm-01", "Konak Clock Tower, İzmir"], ["izm-02", "Overlooking the Aegean"], ["izm-03", "On the Aegean shore"], ["izm-14", "Above the harbour"], ["izm-04", "I ♥ Kuşadası sign at night"], ["izm-05", "Kuşadası bay with a cruise ship"], ["izm-10", "Pigeon Island seen from the water"], ["izm-07", "On a boat in the Aegean"], ["izm-09", "Waterfall park"]]
       },
       {
-        id: "ephesus", city: "Selçuk, İzmir", road: 1140, place: "Ephesus", country: "Türkiye", lat: 37.94, lon: 27.34,
+        id: "ephesus", city: "Selçuk, İzmir", road: 1140, place: "Ephesus", country: "Turkey", lat: 37.94, lon: 27.34,
         note: "The Library of Celsus was built in the early 2nd century AD and once held around 12,000 scrolls. Its two-storey façade was rebuilt in the 1970s from its original fallen pieces, a method called anastylosis.",
         memory: "",
         photos: [["izm-06", "At the Library of Celsus"], ["izm-13", "The Library of Celsus façade"], ["izm-08", "Among the columns of Ephesus"]]
       },
       {
-        id: "pamukkale", city: "Denizli", road: 970, place: "Pamukkale & Hierapolis", country: "Türkiye", lat: 37.92, lon: 29.12,
+        id: "pamukkale", city: "Denizli", road: 970, place: "Pamukkale & Hierapolis", country: "Turkey", lat: 37.92, lon: 29.12,
         note: "The white terraces are travertine: calcium carbonate that precipitates out of warm spring water as it cools and loses CO₂. Above them, the Roman theatre of Hierapolis still shows how a hillside was shaped to carry sound to thousands of seats.",
         memory: "",
         photos: [["den-01", "In the travertine pools of Pamukkale"], ["den-02", "Standing in a travertine pool"], ["izm-11", "The theatre of Hierapolis"], ["izm-12", "Hierapolis theatre and the valley"]]
       },
       {
-        id: "cappadocia", city: "Nevşehir", road: 490, place: "Cappadocia", country: "Türkiye", lat: 38.64, lon: 34.83,
+        id: "cappadocia", city: "Nevşehir", road: 490, place: "Cappadocia", country: "Turkey", lat: 38.64, lon: 34.83,
         note: "The fairy chimneys formed when soft volcanic tuff eroded around harder caps of basalt. People carved homes, churches and a whole rock citadel out of that same soft stone.",
         memory: "",
         photos: [["kap-01", "Hot-air balloons at sunrise"], ["kap-02", "Fairy chimneys"], ["kap-04", "A rock-cut citadel above the town"], ["kap-05", "Rock citadel and cave houses"]]
       },
       {
-        id: "konya", city: "Konya", road: 560, place: "Konya Tropical Butterfly Garden", country: "Türkiye", lat: 37.87, lon: 32.48,
+        id: "konya", city: "Konya", road: 560, place: "Konya Tropical Butterfly Garden", country: "Turkey", lat: 37.87, lon: 32.48,
         note: "A tropical climate built inside a dome in the middle of the dry Anatolian plateau. Keeping the heat and humidity steady for living butterflies is a serious HVAC problem.",
         memory: "",
         photos: [["kon-03", "In the tropical greenhouse"], ["kon-04", "Butterfly collection display"], ["kon-01", "Butterfly display under lights"], ["kon-02", "Butterfly display"], ["kon-06", "Butterfly display"], ["kon-05", "Hanging tropical plants"]]
       },
       {
-        id: "road", place: "On the road", country: "Türkiye", lat: 39.6, lon: 36.3, noDist: true,
+        id: "road", place: "On the road", country: "Turkey", lat: 39.6, lon: 36.3, noDist: true,
         note: "Some of the best views are the ones between destinations: long green plateaus, power lines and mountains on the horizon.",
         memory: "",
         photos: [["road-02", "Green plains and distant mountains"], ["road-01", "Hills beside the highway"], ["road-03", "Highway beneath a green hill"]]
