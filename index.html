@@ -1312,6 +1312,57 @@
       font-size: 1rem
     }
 
+    .story-btn {
+      margin-top: 14px;
+      font-family: var(--f-mono);
+      font-size: .78rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border: 1.5px solid var(--accent);
+      background: var(--accent);
+      color: var(--accent-ink);
+      cursor: pointer
+    }
+
+    .story-btn.quiet {
+      background: transparent;
+      color: var(--accent)
+    }
+
+    .story-btn:hover {
+      filter: brightness(1.08)
+    }
+
+    .post-group+.post-group {
+      margin-top: 34px
+    }
+
+    .group-h {
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px
+    }
+
+    .group-h span {
+      font-family: var(--f-mono);
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--ink-soft)
+    }
+
+    .reader-body h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 26px 0 8px
+    }
+
     .memory.empty {
       font-family: var(--f-mono);
       font-size: .76rem;
@@ -2480,7 +2531,18 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
     // BLOG POSTS — add a new object to publish a post.
     // category: "Engineering" | "Memories" | "Leadership" | "Thoughts"
     // body: paragraphs separated by a blank line.
+    // BLOG — category groups the posts ("Travel", "Engineering", "Leadership", "Thoughts" ...).
+    // trip: the id of a trip in TRIPS, so the Travel log can link straight to the post.
+    // In body, a line starting with "## " becomes a sub-heading.
     const BLOG_POSTS = [
+      {
+        title: "Belgium, Part 1: Brussels",
+        date: "2026-11-03",
+        category: "Travel",
+        trip: "brussels",
+        summary: "My first trip abroad: a hard landing for my ears, a city built for bikes, the Atomium and the statues of the Grand Place.",
+        body: "## Getting There\n\nIn the summer of 2026 I spent two weeks in Belgium. I stayed with family friends we hadn’t seen in a long time. When they said they would be happy to host me, I got on a plane.\n\nIt was my first time abroad, and I was nervous. I was travelling alone, and it would be the first time I had to speak English with people from other countries. There is no direct flight from Gaziantep, so I flew to Istanbul, waited a few hours, and flew on to Brussels.\n\nSudden pressure changes always affect my hearing, and this landing was no exception. At passport control I could barely understand a word the officer said, and for a moment it felt as if years of studying English had been for nothing. Then my ears got better, I answered his questions, and I was let in.\n\n## Waffles, Museums and Bikes\n\nThe father of the family picked me up at the airport. After a long catch-up we drove to their house, in a quiet neighbourhood away from the city centre. We ate the famous waffles and chocolate, visited museums and rode bikes. One museum I especially remember was the Royal Military Museum, set in the large, green Cinquantenaire Park.\n\nCycling safely through a city was new to me; it is not something I am used to in Turkey. What surprised me most was how complete the system was. Bikes had their own lanes and their own traffic lights, and everyone, except the tourists, knew exactly how to behave around cyclists. It made me realise that feeling safe on a bike is mostly a design decision. When a street is laid out clearly, people learn how to share it, and safety no longer depends only on how careful each rider is.\n\n## The Atomium\n\nLooking at the city as a future engineer, the place that stayed with me was the Atomium. From a distance it looks like a sculpture, but it is a working building: nine steel spheres, each 18 metres across, joined by tubes that visitors walk and ride escalators through. It was built for the 1958 World’s Fair and meant to stand for only six months. Almost fifty years later its original aluminium skin was replaced with stainless-steel panels so that it could keep standing. I liked that: a temporary structure that people decided was worth maintaining, and then engineered to last.\n\n## Grand Place\n\nThen we wandered around the Grand Place. The buildings around the square are covered in statues of people who were once famous there, standing high up on the façades. It made me wonder how many of them the people of Brussels still know and love today. I came to my own conclusion: we may not know the people who made these beautiful works, but the works will keep carrying a piece of them. I asked myself whether one day I could be part of, or even lead, a project that earns that kind of recognition. As a future engineer, I found that a good source of motivation.\n\n## Final Thoughts\n\nAnyway, I really loved Brussels. Maybe because it was the first European city I had ever visited, it completely won me over. What struck me most was how quiet everyday life was; at home I can hardly find five quiet minutes. Overall, the city left a lasting impression on me.\n\nThat’s all for now. With this post, my travel blog about Belgium is only just beginning. Next stop: Bruges. Until then, goodbye, and in an age when information is a click away, be one of those who never stop learning by reading."
+      },
       // {
       //   title: "Why I want to be a mechanical engineer",
       //   date: "2026-10-10",
@@ -2532,16 +2594,16 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
 
     const NEXT_UP = [
       { title: "Projects on GitHub", detail: "Publish every project with its code, documentation and results.", status: "in progress" },
-      { title: "More travel stories", detail: "Write up the memories behind each trip in the Travel log.", status: "in progress" },
+      { title: "More travel stories", detail: "Write up the memories behind each trip in the blog.", status: "in progress" },
       { title: "First blog posts", detail: "Engineering notes, leadership reflections and memories.", status: "in progress" },
     ];
 
-    // TRAVEL — add your own story in `memory` for each trip.
+    // TRAVEL — each trip card links to its blog post (BLOG_POSTS entry with the same trip id).
     const TRIPS = [
       {
         id: "brussels", place: "Brussels", country: "Belgium", lat: 50.85, lon: 4.35,
         note: "The Atomium was built for Expo 58. It is a model of an iron crystal's unit cell, magnified 165 billion times: nine steel spheres held 102 metres up by tubes that also carry escalators. Nearby, the Cinquantenaire arch was completed in 1905 for the 75th anniversary of Belgian independence. And the city's smallest celebrity, the Manneken Pis statue, owns a wardrobe of more than 1,000 costumes.",
-        memory: "In the summer of 2026 I spent two weeks in Belgium. I stayed with family friends we hadn't seen in a long time. When they said they would be happy to host me, I got on a plane.\n\nIt was my first time abroad, and I was nervous. I was travelling alone, and it would be the first time I had to speak English with people from other countries. There is no direct flight from Gaziantep, so I flew to Istanbul, waited a few hours, and flew on to Brussels.\n\nSudden pressure changes always affect my hearing, and this landing was no exception. At passport control I could barely understand a word the officer said, and for a moment it felt as if years of studying English had been for nothing. Then my ears cleared, I answered his questions, and I was let in.\n\nThe father of the family picked me up at the airport. After a long catch-up we drove to their house, in a quiet neighbourhood away from the city centre. We spent about five days exploring Brussels: we ate the famous waffles and chocolate, visited museums and rode bikes. Cycling safely through a city was new to me; it is not something I am used to in Turkey. It made me realise that feeling safe on a bike is mostly a design decision: it depends on how a street is laid out, not only on how careful the riders are.\n\nLooking at the city as a future engineer, the place that stayed with me was the Atomium. From a distance it looks like a sculpture, but it is a working building: nine steel spheres, each 18 metres across, joined by tubes that visitors walk and ride escalators through. It was built for the 1958 World's Fair and meant to stand for only six months. Almost fifty years later its original aluminium skin was replaced with stainless-steel panels so that it could keep standing. I liked that: a temporary structure that people decided was worth maintaining, and then engineered to last.\n\nA couple of times I talked with strangers, and each time I walked away feeling I had embarrassed myself. But it was my first time abroad, and the only way to get better at it was to keep trying.",
+        memory: "",
         photos: [["bel-10", "The Atomium"], ["bel-04", "Cinquantenaire arch"], ["bel-14", "Quadriga on top of the Cinquantenaire arch"], ["bel-11", "The Everard 't Serclaes memorial near the Grand-Place, rubbed for good luck"], ["bel-05", "With Manneken Pis, Brussels' famous fountain statue"], ["bel-12", "Manneken Pis wearing one of his costumes"], ["bel-13", "Church interior"], ["bel-21", "Painting in a Brussels church"], ["bel-07", "A First World War tank in the military history museum"], ["bel-17", "Model of a ship of the line"], ["bel-18", "Polar expedition ship model"], ["bel-19", "Naval vessel model"], ["bel-15", " A First World War veteran dog 'Whisky' "], ["bel-16", "Museum exhibit"]]
       },
       {
@@ -2673,11 +2735,15 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
       <h3>${esc(t.place)}</h3>
       <div class="where"><span class="mono">${fmtLat(t.lat)} ${fmtLon(t.lon)}</span>${d}<span class="mono">${t.photos.length} photos</span></div>
       <div class="note"><div class="label">${pinSvg}Engineer's eye</div>${esc(t.note)}</div>
-      ${t.memory ? `<div class="memory">${t.memory.split(/\n\s*\n/).map(p => `<p>${esc(p)}</p>`).join('')}</div>` : `<div class="memory empty">Travel story coming soon.</div>`}
+      ${BLOG_POSTS.some(p => p.trip === t.id) ? `<button class="story-btn" data-story="${esc(t.id)}">Read the travel story in the blog →</button>` : `<button class="story-btn quiet" data-story="">More stories in the travel blog →</button>`}
       <div class="strip">${t.photos.map(([f, c], i) => `<button data-t="${ti}" data-i="${i}" aria-label="Open photo: ${esc(c)}"><img src="img/${f}.jpg?v=20261009" alt="${esc(c)}" loading="lazy"></button>`).join('')}</div>
     </div></article>`;
     }).join('');
-    $('#trips').addEventListener('click', e => { const b = e.target.closest('button[data-t]'); if (b) openLB(TRIPS[+b.dataset.t].photos, +b.dataset.i); });
+    $('#trips').addEventListener('click', e => {
+      const st = e.target.closest('button[data-story]');
+      if (st) { window.openBlog && window.openBlog(st.dataset.story); return; }
+      const b = e.target.closest('button[data-t]'); if (b) openLB(TRIPS[+b.dataset.t].photos, +b.dataset.i);
+    });
 
     /* ---------- blog ---------- */
     (() => {
@@ -2697,15 +2763,27 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
         }
         F.hidden = false;
         F.innerHTML = cats.map(c => `<button aria-pressed="${c === cur}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
-        const list = posts.filter(p => cur === 'All' || p.category === cur);
-        P.className = 'posts';
-        P.innerHTML = list.map(p => `<button class="post" data-k="${posts.indexOf(p)}"><span class="label">${esc(p.category || '')} · ${esc(fmtDate(p.date))}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary || '')}</p><span class="more">Read →</span></button>`).join('');
+        const card = p => `<button class="post" data-k="${posts.indexOf(p)}"><span class="label">${esc(p.category || '')} · ${esc(fmtDate(p.date))}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary || '')}</p><span class="more">Read →</span></button>`;
+        const groups = (cur === 'All' ? cats.slice(1) : [cur]).map(c => [c, posts.filter(p => p.category === c)]).filter(([, l]) => l.length);
+        P.className = 'post-groups';
+        P.innerHTML = groups.map(([c, l]) => `<div class="post-group"><h3 class="group-h">${esc(c)} <span>${l.length} ${l.length === 1 ? 'post' : 'posts'}</span></h3><div class="posts">${l.map(card).join('')}</div></div>`).join('');
       }
+      function openPost(p) {
+        const html = String(p.body || '').split(/\n\s*\n/).map(x => x.trim()).filter(Boolean)
+          .map(x => x.startsWith('## ') ? `<h3>${esc(x.slice(3))}</h3>` : `<p>${esc(x)}</p>`).join('');
+        $('#readerBody').innerHTML = `<span class="label">${esc(p.category || '')} · ${esc(fmtDate(p.date))}</span><h2>${esc(p.title)}</h2>${html}`;
+        $('#reader').showModal();
+      }
+      // used by the Travel log: open the post for a trip, or show the Travel posts
+      window.openBlog = tripId => {
+        const p = tripId && posts.find(x => x.trip === tripId);
+        if (p) { openPost(p); return; }
+        if (cats.includes('Travel')) { cur = 'Travel'; render(); }
+        document.getElementById('blog').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      };
       $('#blogFilters').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; cur = b.dataset.c; render(); });
       $('#posts').addEventListener('click', e => {
-        const b = e.target.closest('.post'); if (!b) return; const p = posts[+b.dataset.k];
-        $('#readerBody').innerHTML = `<span class="label">${esc(p.category || '')} · ${esc(fmtDate(p.date))}</span><h2>${esc(p.title)}</h2>${String(p.body || '').split(/\n\s*\n/).map(x => `<p>${esc(x.trim())}</p>`).join('')}`;
-        $('#reader').showModal();
+        const b = e.target.closest('.post'); if (!b) return; openPost(posts[+b.dataset.k]);
       });
       render();
     })();
