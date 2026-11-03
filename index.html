@@ -796,6 +796,17 @@
     }
 
     /* launch lab */
+    .lab-story {
+      max-width: 760px;
+      margin: 8px 0 22px;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent)
+    }
+
+    .lab-story p {
+      margin: 6px 0 0
+    }
+
     .lab {
       margin-top: clamp(48px, 6vw, 80px);
       border: 1.5px solid var(--ink);
@@ -2227,6 +2238,11 @@
             </div>
           </article>
 
+          <div class="lab-story">
+            <span class="label">From the flight to the simulator</span>
+            <p>On my first flight the parachute opened as planned, yet instead of drifting straight down, the rocket came down slowly in wide circles, spiralling under the canopy, as you can see in the video. It confused me, and at the time I assumed I had simply done something wrong. Once I learned more physics, it looked less like a building mistake and more like outside factors at work, such as the wind. I wrote Launch Lab to make sense of that flight and to simulate it again. It is a 2D model, so it shows how wind and ejection timing move the rocket, but not the circling itself.</p>
+          </div>
+
           <!-- Launch Lab -->
           <div class="lab" id="lab">
             <div class="lab-ctrl">
@@ -2774,6 +2790,12 @@ vx += ax * dt;  vy += ay * dt;  x += vx * dt;  y += vy * dt;</pre>
       addEventListener('pointerleave', () => { mx = my = -999 });
       addEventListener('scroll', () => { scrollV += (scrollY - lastY); lastY = scrollY; }, { passive: true });
       addEventListener('pointerdown', e => { boost = Math.min(boost + 3, 6); });
+      // Clicking the background spins the gears, so people click it several times in a row.
+      // A double or triple click there would select (highlight in blue) the nearest text; stop that,
+      // but keep normal text selection on the text itself.
+      addEventListener('mousedown', e => {
+        if (e.detail > 1 && !e.target.closest('p, h1, h2, h3, h4, li, dt, dd, span, b, small, em, strong, a, code, pre, figcaption, blockquote, td, th, input, textarea, label, button')) e.preventDefault();
+      });
 
       function place(gears, x0, y0) {
         gears.forEach(g => { if (!g.parent) { g.x = x0; g.y = y0; return; } const p = g.parent; const d = p.r + g.r; g.x = p.x + Math.cos(g.ang) * d; g.y = p.y + Math.sin(g.ang) * d; });
